@@ -1,5 +1,7 @@
-import Scrap
+import ScrapEvent
 from flask import jsonify
+
+import debug2
 
 Event = Scrap.getEvent()
 

@@ -6,6 +6,8 @@ session_requests = requests.session()
 result = session_requests.get(login_url)
 htmlpage = html.fromstring(result.text)
 
+count = 0
+
 #values to jsonify
 class Event:
     storedEventNames = []
@@ -16,7 +18,7 @@ class Event:
 
 #print(result.text)
 
-def getEvent():
+def getEvent(pages = 0):
 
     rows = htmlpage.xpath('//div[@class="row"]')[0]
 

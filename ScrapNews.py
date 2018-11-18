@@ -6,6 +6,7 @@ session_requests = requests.session()
 result = session_requests.get(login_url)
 htmlpage = html.fromstring(result.text)
 
+
 #values to jsonify
 class News:
     storedNewsTitles = []

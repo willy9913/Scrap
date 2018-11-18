@@ -8,6 +8,13 @@ import ScrapNews
 
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+
+    return render_template('home.html')
+
+
+
 @app.route('/event', methods=['GET'])
 def get_Event():
     Event = ScrapEvent.getEvent()
