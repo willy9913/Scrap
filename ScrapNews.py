@@ -46,3 +46,4 @@ def getNews():
 
 
     return news
+

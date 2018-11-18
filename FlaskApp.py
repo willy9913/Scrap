@@ -9,7 +9,7 @@ import ScrapNews
 app = Flask(__name__)
 
 @app.route('/event', methods=['GET'])
-def get_profile():
+def get_Event():
     Event = ScrapEvent.getEvent()
 
     itemSize = len(Event.storedEventNames)
@@ -38,7 +38,7 @@ def get_profile():
     return jsonify(EventBucket)
 
 @app.route('/news', methods=['GET'])
-def get_profile():
+def get_News():
     News = ScrapNews.getNews()
 
     itemSize = len(News.storedNewsTitles)
