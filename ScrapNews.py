@@ -44,9 +44,5 @@ def getNews():
     for item in newsLinks:
         news.storedNewsLinks.append(item.attrib['href'])
 
-    print(news.storedNewsTitles)
-    print(news.storedNewsPhotos)
-    print(news.storedNewsLinks)
-    print(news.storedNewsDates)
 
     return news
