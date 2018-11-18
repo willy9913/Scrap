@@ -37,5 +37,33 @@ def get_profile():
 
     return jsonify(EventBucket)
 
+@app.route('/news', methods=['GET'])
+def get_profile():
+    News = ScrapNews.getNews()
+
+    itemSize = len(News.storedNewsTitles)
+
+    jsonEvent={}
+    jsonEvent.clear()
+
+    NewsBucket=[]
+
+    for i in range(1, itemSize + 1):
+        jsonEvent['title'] = News.storedNewsTitles[i - 1];
+        jsonEvent['date'] = News.storedNewsDates[i - 1];
+        jsonEvent['photo'] = News.storedNewsPhotos[i - 1];
+        jsonEvent['link'] = News.storedNewsLinks[i - 1];
+
+        NewsBucket.append(jsonEvent.copy())
+        jsonEvent.clear()
+
+    #a
+    lastOut={}
+    lastOut.clear()
+
+    lastOut['obj']=NewsBucket
+
+    return jsonify(NewsBucket)
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=8080)
