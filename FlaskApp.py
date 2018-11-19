@@ -10,10 +10,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-
+    print("Home Sweet Home!")
     return render_template('home.html')
-
-
 
 @app.route('/event', methods=['GET'])
 def get_Event():
