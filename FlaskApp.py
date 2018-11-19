@@ -8,7 +8,7 @@ import ScrapNews
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/a')
 def home():
 
     return render_template('home.html')
